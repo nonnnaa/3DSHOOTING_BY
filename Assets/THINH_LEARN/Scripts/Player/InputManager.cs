@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,10 +13,7 @@ public class InputManager : BYSingletonMono<InputManager>
     }
 
     public UnityEvent IsJump;
-    void Start()
-    {
-        
-    }
+    public Action OnChangeWeapon;
 
     
     void Update()
@@ -23,6 +21,10 @@ public class InputManager : BYSingletonMono<InputManager>
         if(Input.GetKeyDown(KeyCode.Space))
         {
             IsJump?.Invoke();
+        }
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            OnChangeWeapon?.Invoke();
         }
     }
 }

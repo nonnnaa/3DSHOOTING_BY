@@ -99,7 +99,6 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        //Debug.Log("JUMPING");
         if(isGrounded && canJump)
         {
             StartCoroutine(JumpCooldown());

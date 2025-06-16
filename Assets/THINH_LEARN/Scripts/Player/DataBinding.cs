@@ -45,10 +45,18 @@ public class DataBinding : BYSingletonMono<DataBinding>
         AK_isGrounded = Animator.StringToHash("isGrounded");
         AK_jumpVelocity = Animator.StringToHash("jumpVelocity");
         AK_jumpTrigger = Animator.StringToHash("jumpTrigger");
-
-        
-        
+    }
+    public void ChangeAnimator(AnimatorOverrideController animatorOverrideController)
+    {
+        if (animatorOverrideController != null)
+        {
+            animator.runtimeAnimatorController = animatorOverrideController;
+        }
     }
 
+    public void DrawWeapon()
+    {
+        animator.Play("Draw", 1, 0);
+    }
 
 }
